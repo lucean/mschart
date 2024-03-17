@@ -22,7 +22,7 @@
 chart_data_labels <- function(x, num_fmt = "General", position = "ctr",
                                 show_legend_key = FALSE, show_val = FALSE,
                                 show_cat_name = FALSE, show_serie_name = FALSE,
-                                show_percent = FALSE, separator = ", " ){
+                                show_percent = FALSE, separator = ", ", wrap = "square" ){
 
   if( !position %in% st_dlblpos ){
     stop("position should be one of ", paste0(shQuote(st_dlblpos), collapse = ", " ))
@@ -31,7 +31,8 @@ chart_data_labels <- function(x, num_fmt = "General", position = "ctr",
   out <- list(num_fmt = num_fmt, position = position,
        show_legend_key = show_legend_key, show_val = show_val,
        show_cat_name = show_cat_name, show_serie_name = show_serie_name,
-       show_percent = show_percent, separator = separator)
+       show_percent = show_percent, separator = separator, wrap = wrap)
+
   class(out) <- "labels_options"
   x$label_settings <- out
   x
@@ -42,6 +43,8 @@ to_pml.labels_options <- function(x, add_ns = FALSE, with_position = TRUE, show_
   txpr <- ""
   if( !is.null( x$labels_fp )){
     txpr <- ooxml_txpr(x$labels_fp)
+    txpr <- gsub("a:bodyPr", "a:bodyPr wrap=\"%s\"", txpr, fixed = TRUE)
+    txpr <- sprintf(txpr, x$wrap)
   }
 
   str_ <- paste0("<c:dLbls>",
