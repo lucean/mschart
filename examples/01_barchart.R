@@ -1,6 +1,14 @@
-library(mschart)
+library(xml2)
+library(writexl)
+library(stats)
+library(data.table)
+library(grDevices)
+library(cellranger)
+library(htmltools)
+library(devtools)
 library(officer)
 
+load_all()
 
 # example chart 01 -------
 
