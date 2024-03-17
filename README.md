@@ -53,13 +53,7 @@ a PowerPoint Viewer installed on the machine.
 You can get the development version from GitHub:
 
 ``` r
-devtools::install_github("ardata-fr/mschart")
-```
-
-Or the latest version on CRAN:
-
-``` r
-install.packages("mschart")
+devtools::install_github("lucean/mschart")
 ```
 
 ## Contributing to the package
@@ -71,3 +65,14 @@ report](https://github.com/ardata-fr/mschart/issues), please spend some
 time making it easy for me to follow and reproduce. The more time you
 spend on making the bug report coherent, the more time I can dedicate to
 investigate the bug as opposed to the bug report.
+
+## Notes for this repository
+
+The work contained within this repository (lucean/mscharts) is based upon the 
+upstream fork, with full credit to the original authors. The changes here are
+designed to add small pieces of additional functionality to the mscharts 
+package.
+
+List of additions:
+
+* Provide a mechanism for changing the wrapping of data labels.
