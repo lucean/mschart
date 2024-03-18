@@ -22,7 +22,7 @@
 chart_data_labels <- function(x, num_fmt = "General", position = "ctr",
                                 show_legend_key = FALSE, show_val = FALSE,
                                 show_cat_name = FALSE, show_serie_name = FALSE,
-                                show_percent = FALSE, separator = ", ", wrap = "square" ){
+                                show_percent = FALSE, separator = ", ", wrap = "none" ){
 
   if( !position %in% st_dlblpos ){
     stop("position should be one of ", paste0(shQuote(st_dlblpos), collapse = ", " ))
