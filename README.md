@@ -76,3 +76,4 @@ package.
 List of additions:
 
 * Provide a mechanism for changing the wrapping of data labels.
+* Provide a mechanism for changing the left/right margins for data labels in chart series.
