@@ -1,5 +1,6 @@
-fmt_name <- function( x ){
+`%||%` <- function(x, y) if (is.null(x)) y else x
 
+fmt_name <- function( x ){
   if( inherits(x, "Date") )
     "date_fmt"
   else if( is.factor(x) || is.character(x) )
@@ -8,9 +9,7 @@ fmt_name <- function( x ){
     "integer_fmt"
   else if( is.double(x) )
     "double_fmt"
-  else stop("unknow type of data")
-
-  x
+  else stop("unknown type of data")
 }
 
 serie_builtin_class <- function( x ){
@@ -23,7 +22,7 @@ serie_builtin_class <- function( x ){
     num_ref(x)
   else if( is.double(x) )
     num_ref(x)
-  else stop("unknow type of data")
+  else stop("unknown type of data")
 }
 
 is_valid_color = function(x) {
@@ -48,8 +47,15 @@ ooxml_fp_border <- function(x, in_tags = NULL ){
   alpha <- colspecs$alpha
   is_transparent <- alpha < .0001
 
-  if( is_transparent || x$width < 0.001 || x$style %in% "none" ){
+  no_line <- is_transparent || x$width < 0.001 || x$style %in% "none"
+  if( no_line && is.null(in_tags) ){
     return("")
+  }
+  if( no_line ){
+    out <- "<a:ln><a:noFill/></a:ln>"
+    begin <- paste0("<", in_tags, ">", collapse = "")
+    end <- paste0("</", rev(in_tags), ">", collapse = "")
+    return(paste0(begin, out, end))
   }
 
   colspecs$alpha <- NULL

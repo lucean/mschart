@@ -1,6 +1,6 @@
 #' @export
-#' @title add chart into a Word document
-#' @description add a `ms_chart` into an rdocx object, the graphic will be
+#' @title Add a chart to a Word document
+#' @description Add a `ms_chart` to an rdocx object. The graphic will be
 #' inserted in an empty paragraph.
 #' @param x an rdocx object
 #' @param chart an `ms_chart` object.
@@ -8,6 +8,8 @@
 #' @param pos where to add the new element relative to the cursor,
 #' one of "after", "before", "on".
 #' @param height,width height and width in inches.
+#' @return An rdocx object.
+#' @seealso [ph_with.ms_chart()]
 #' @importFrom officer body_add_xml styles_info
 #' @examples
 #' library(officer)

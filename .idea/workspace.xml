@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b73fc226-c989-4e53-bcc3-18f50b9df4bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/05_combochart.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man/ms_combochart.Rd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man/ms_piechart.Rd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/_snaps/visual/visual-areachart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/_snaps/visual/visual-barchart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/_snaps/visual/visual-linechart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/_snaps/visual/visual-pie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/_snaps/visual/visual-scatterchart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/test-areachart.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/test-custom-labels.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/test-linechart.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/test-utf8.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/testthat/test-visual.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/R-CMD-check.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/R-CMD-check.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pkgdown.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pkgdown.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DESCRIPTION" beforeDir="false" afterPath="$PROJECT_DIR$/DESCRIPTION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NAMESPACE" beforeDir="false" afterPath="$PROJECT_DIR$/NAMESPACE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEWS.md" beforeDir="false" afterPath="$PROJECT_DIR$/NEWS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/as_series.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/as_series.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/axis_codes.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/axis_codes.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/axis_setting.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/axis_setting.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/body_add_chart.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/body_add_chart.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/chart_data_labels.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/chart_data_labels.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/chart_data_styles.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/chart_data_styles.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/chart_labels.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/chart_labels.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/chart_settings.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/chart_settings.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/datasets.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/datasets.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/helpers.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/helpers.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/ms_chart.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/ms_chart.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/package.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/package.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/ph_with_chart.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/ph_with_chart.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/table_setting.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/table_setting.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/theme.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/theme.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/to_pml.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/to_pml.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R/utils.R" beforeDir="false" afterPath="$PROJECT_DIR$/R/utils.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/README.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pkgdown.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_pkgdown.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inst/tinytest/test-custom-labels.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inst/tinytest/test-utf8.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inst/tinytest/test_areachart.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inst/tinytest/test_linechart.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/as_bar_stack.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/as_bar_stack.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/body_add_chart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/body_add_chart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/browser_data.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/browser_data.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/browser_ts.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/browser_ts.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_ax_x.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_ax_x.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_ax_y.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_ax_y.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_fill.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_fill.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_labels.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_labels.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_line_style.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_line_style.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_line_width.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_line_width.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_size.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_size.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_smooth.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_smooth.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_stroke.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_stroke.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_data_symbol.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_data_symbol.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_labels.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_labels.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_labels_text.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_labels_text.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_settings.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_settings.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/chart_table.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/chart_table.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/ms_areachart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/ms_areachart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/ms_barchart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/ms_barchart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/ms_linechart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/ms_linechart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/ms_scatterchart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/ms_scatterchart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/mschart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/mschart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/ph_with.ms_chart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/ph_with.ms_chart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/print.ms_chart.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/print.ms_chart.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/set_theme.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/set_theme.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man/us_indus_prod.Rd" beforeDir="false" afterPath="$PROJECT_DIR$/man/us_indus_prod.Rd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tinytest.R" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="3ARCQOWXwIfJkvAKfuw3pyFpQwG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Merging chore/sync-forks",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/tom/projects/mschart",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" IS_LOCATION_SIMULATION_SUPPORTED="false" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" DEVELOPMENT_TEAM="${TEAM_ID}" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b73fc226-c989-4e53-bcc3-18f50b9df4bb" name="Changes" comment="" />
+      <created>1772545978948</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772545978948</updated>
+      <workItem from="1772545980258" duration="173000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

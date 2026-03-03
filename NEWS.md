@@ -1,3 +1,44 @@
+# mschart 0.4.2
+
+## New features
+
+* New function `ms_combochart()` to combine multiple chart types
+(e.g. bars + lines) with optional secondary axes. Only works with
+charts created with `asis = TRUE`. Contributed by Jan Marvin Garbuszus.
+* New function `ms_piechart()` for pie and doughnut charts. Use
+`chart_settings(x, hole_size = ...)` to control the hole size
+(0 = pie, >0 = doughnut). Contributed by Jan Marvin Garbuszus.
+* `chart_ax_x()` and `chart_ax_y()` gain a `second_axis` argument
+for use with `ms_combochart()`.
+* Grid lines can now be disabled by setting `grid_major_line_x`,
+`grid_major_line_y`, `grid_minor_line_x` or `grid_minor_line_y`
+to `FALSE` in `mschart_theme()` or `chart_theme()`.
+
+## Issues
+
+* Fixed `chart_data_line_style()` not hiding lines when style is set
+to `"none"`. The generated XML now explicitly uses `<a:noFill/>` instead
+of omitting the line element, which caused Excel to apply the default
+style. Reported in #91, contributed by Stefan Moog (#99).
+* Fixed `fmt_name()` returning the input data instead of the format
+name string. Automatic axis number formatting from theme (e.g.
+`date_fmt`, `double_fmt`) now works correctly.
+* Fixed `chart_data_smooth()` using `symbol` series names instead of
+`smooth` series names to resolve series.
+* Fixed `chart_settings()` for linechart, areachart and scatterchart
+silently resetting previously set options when called with partial
+parameters. All methods now use the `if(missing())` pattern to
+preserve existing option values.
+
+
+## Changes
+
+* Minimum R version bumped to 3.5, officer to 0.6.7.
+* Fixed typos in internal code (`asssert_scatter`, `unknow`).
+* Removed deprecated roxygen tags (`@docType`, `@keywords datasets`).
+* Updated GitHub Actions to v4.
+* switch from tinytest to testthat
+
 # mschart 0.4.1
 
 ## Issues
@@ -17,12 +58,12 @@ new theme `theme_ggplot2()`.
 ## New features
 
 * Support for openxlsx2 by Jan Marvin Garbuszus
-* option to add table of data below corresponding levels by Marlon Molina
+* option to add a table of data below the chart by Marlon Molina
 
 ## Issues
 
 * fix issue with % in labels of the graphic
-* stop reordering data when a group is used, user is expected to 
+* stop reordering data when a group is used; the user is expected to
 do it before sending the data to mschart.
 
 # mschart 0.3.1
@@ -106,9 +147,9 @@ do it before sending the data to mschart.
 
 * added argument `legend_text` to theme function
 * legend can be dropped now
-* `ms_linechart` now accept non numeric x axis.
+* `ms_linechart` now accepts a non-numeric x axis.
 
 
 # mschart 0.2.1
 
-* Fix issue that made file *corrupted* when data has missing values
+* Fix issue that corrupted the file when data had missing values
