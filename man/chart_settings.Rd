@@ -6,36 +6,33 @@
 \alias{chart_settings.ms_linechart}
 \alias{chart_settings.ms_areachart}
 \alias{chart_settings.ms_scatterchart}
-\title{set chart options}
+\alias{chart_settings.ms_piechart}
+\title{Set chart options}
 \usage{
 chart_settings(x, ...)
 
 \method{chart_settings}{ms_barchart}(x, vary_colors, gap_width, dir, grouping, overlap, table, ...)
 
-\method{chart_settings}{ms_linechart}(x, vary_colors, style = "lineMarker", table, ...)
+\method{chart_settings}{ms_linechart}(x, vary_colors, style, table, ...)
 
-\method{chart_settings}{ms_areachart}(
-  x,
-  vary_colors = FALSE,
-  grouping = "standard",
-  table = FALSE,
-  ...
-)
+\method{chart_settings}{ms_areachart}(x, vary_colors, grouping, table, ...)
 
-\method{chart_settings}{ms_scatterchart}(x, vary_colors = FALSE, style = "marker", ...)
+\method{chart_settings}{ms_scatterchart}(x, vary_colors, style, ...)
+
+\method{chart_settings}{ms_piechart}(x, vary_colors, hole_size, ...)
 }
 \arguments{
 \item{x}{an \code{ms_chart} object.}
 
 \item{...}{unused parameter}
 
-\item{vary_colors}{if \code{TRUE} the data points in the single series are displayed the same color.}
+\item{vary_colors}{if \code{TRUE}, each data point in a single series is displayed in a different color.}
 
 \item{gap_width}{A gap appears between the bar or clustered bars for each category on a bar chart.
 The default width for this gap is 150 percent of the bar width. It can be set
 between 0 and 500 percent of the bar width.}
 
-\item{dir}{the direction of the bars in the chart, value must one of "horizontal" or "vertical".}
+\item{dir}{the direction of the bars in the chart, value must be one of "horizontal" or "vertical".}
 
 \item{grouping}{grouping for a barchart, a linechart or an area chart. must be one of "percentStacked", "clustered", "standard" or "stacked".}
 
@@ -52,6 +49,13 @@ to be superimposed. The default value is 0.}
 
 \item{style}{Style for the linechart or scatterchart type of markers. One
 of 'none', 'line', 'lineMarker', 'marker', 'smooth', 'smoothMarker'.}
+
+\item{hole_size}{size of the hole in a doughnut chart, between 0 and 90
+(percent of the radius). Default 0 produces a pie chart;
+values above 0 produce a doughnut chart.}
+}
+\value{
+An \code{ms_chart} object.
 }
 \description{
 Set chart properties.
@@ -62,9 +66,11 @@ Set chart properties.
 
 \item \code{chart_settings(ms_linechart)}: linechart settings
 
-\item \code{chart_settings(ms_areachart)}: linechart settings
+\item \code{chart_settings(ms_areachart)}: areachart settings
 
-\item \code{chart_settings(ms_scatterchart)}: linechart settings
+\item \code{chart_settings(ms_scatterchart)}: scatterchart settings
+
+\item \code{chart_settings(ms_piechart)}: piechart settings
 
 }}
 \section{Illustrations}{

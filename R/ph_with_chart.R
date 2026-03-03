@@ -63,14 +63,16 @@ pml_chart <- function(x, value, id_x, id_y){
 #' @importFrom xml2 as_xml_document
 #' @export
 #' @method ph_with ms_chart
-#' @title add a MS Chart output into a PowerPoint object
-#' @description produces a Microsoft Chart graphics output from R instructions
-#' and add the result in a PowerPoint document object produced
+#' @title Add a MS Chart output into a PowerPoint object
+#' @description Produces a Microsoft Chart graphics output from R instructions
+#' and adds the result in a PowerPoint document object produced
 #' by [officer::read_pptx()].
 #' @param x a pptx device
 #' @param value chart object
 #' @param location a location for a placeholder.
 #' @param ... Arguments to be passed to methods.
+#' @return An rpptx object.
+#' @seealso [body_add_chart()]
 #' @examples
 #' my_barchart <- ms_barchart(data = browser_data,
 #'   x = "browser", y = "value", group = "serie")
