@@ -1,4 +1,4 @@
-#' @title set chart theme
+#' @title Set chart theme
 #' @description Modify chart theme with function \code{set_theme}.
 #' @param x an `ms_chart` object.
 #' @param value a [mschart_theme()] object.
@@ -21,8 +21,6 @@
 #' )
 #' my_bc <- set_theme(my_bc, mytheme)
 #'
-#'
-#'
 #' my_bc_2 <- ms_barchart(
 #'   data = browser_data, x = "browser",
 #'   y = "value", group = "serie"
@@ -30,12 +28,23 @@
 #' my_bc_2 <- chart_theme(my_bc_2,
 #'   grid_major_line_y = fp_border(width = .5, color = "cyan")
 #' )
+#' @return An `ms_chart` object.
 #' @export
 set_theme <- function(x, value) {
   x$theme <- value
   x
 }
 
+#' helper class to check function input
+#' @param x input argument to check
+#' @param class a class to check against
+#' @keywords internal
+#' @noRd
+assert_class <- function(x, class) {
+  if (!is.logical(x) && !inherits(x, class)) {
+    stop("input must be logical or ", class, " not ", x)
+  }
+}
 
 #' @importFrom officer fp_text fp_border
 #' @description Use \code{mschart_theme()} to create a chart theme.
@@ -59,6 +68,7 @@ set_theme <- function(x, value) {
 #' @param legend_position it specifies the position of the legend. It should be
 #' one of 'b', 'tr', 'l', 'r', 't', 'n' (for 'none').
 #' @rdname set_theme
+#' @return An `mschart_theme` object (for `mschart_theme()`).
 #' @seealso [ms_barchart()], [ms_areachart()], [ms_scatterchart()], [ms_linechart()]
 #' @export
 mschart_theme <- function(axis_title = fp_text(bold = TRUE, font.size = 16), axis_title_x = axis_title, axis_title_y = axis_title,
@@ -72,6 +82,7 @@ mschart_theme <- function(axis_title = fp_text(bold = TRUE, font.size = 16), axi
                           chart_background = NULL, chart_border = fp_border(color = "transparent"),
                           plot_background = NULL, plot_border = fp_border(color = "transparent"),
                           date_fmt = "yyyy/mm/dd", str_fmt = "General", double_fmt = "#,##0.00", integer_fmt = "0", legend_position = "b") {
+  # strict check: these must be fp_text objects
   stopifnot(inherits(main_title, "fp_text"))
   stopifnot(inherits(table_text, "fp_text"))
   stopifnot(inherits(legend_text, "fp_text"))
@@ -81,27 +92,30 @@ mschart_theme <- function(axis_title = fp_text(bold = TRUE, font.size = 16), axi
   stopifnot(inherits(axis_text, "fp_text"))
   stopifnot(inherits(axis_text_x, "fp_text"))
   stopifnot(inherits(axis_text_y, "fp_text"))
+  # strict check: these must be fp_border objects
   stopifnot(inherits(axis_ticks, "fp_border"))
   stopifnot(inherits(axis_ticks_x, "fp_border"))
   stopifnot(inherits(axis_ticks_y, "fp_border"))
-  stopifnot(inherits(grid_major_line, "fp_border"))
-  stopifnot(inherits(grid_major_line_x, "fp_border"))
-  stopifnot(inherits(grid_major_line_y, "fp_border"))
-  stopifnot(inherits(grid_minor_line, "fp_border"))
-  stopifnot(inherits(grid_minor_line_x, "fp_border"))
-  stopifnot(inherits(grid_minor_line_y, "fp_border"))
+  # assert_class: accept fp_border or logical (FALSE to disable the grid line)
+  assert_class(grid_major_line, "fp_border")
+  assert_class(grid_major_line_x, "fp_border")
+  assert_class(grid_major_line_y, "fp_border")
+  assert_class(grid_minor_line, "fp_border")
+  assert_class(grid_minor_line_x, "fp_border")
+  assert_class(grid_minor_line_y, "fp_border")
+  # strict check: these must be fp_border objects
   stopifnot(inherits(chart_border, "fp_border"))
   stopifnot(inherits(plot_border, "fp_border"))
 
-  if (title_rot < 0 && title_rot > 359) {
+  if (title_rot < 0 || title_rot > 359) {
     stop("title_rot must be between 0 and 359")
   }
 
-  if (title_x_rot < 0 && title_x_rot > 359) {
+  if (title_x_rot < 0 || title_x_rot > 359) {
     stop("title_x_rot must be between 0 and 359")
   }
 
-  if (title_y_rot < 0 && title_y_rot > 359) {
+  if (title_y_rot < 0 || title_y_rot > 359) {
     stop("title_y_rot must be between 0 and 359")
   }
 
@@ -127,6 +141,7 @@ mschart_theme <- function(axis_title = fp_text(bold = TRUE, font.size = 16), axi
 }
 
 #' @rdname set_theme
+#' @return An `ms_chart` object (for `set_theme()` and `chart_theme()`).
 #' @export
 #' @description Use \code{chart_theme()} to modify components of the theme of a chart.
 chart_theme <- function(x, axis_title_x, axis_title_y, main_title, legend_text,
@@ -195,16 +210,12 @@ chart_theme <- function(x, axis_title_x, axis_title_y, main_title, legend_text,
   }
 
   if (!missing(grid_major_line_x)) {
-    if (!all(class(grid_major_line_x) %in% class(x$theme$grid_major_line_x))) {
-      stop("grid_major_line_x should be of class ", class(x$theme$grid_major_line_x))
-    }
+    assert_class(grid_major_line_x, class(x$theme$grid_major_line_x))
     x$theme$grid_major_line_x <- grid_major_line_x
   }
 
   if (!missing(grid_major_line_y)) {
-    if (!all(class(grid_major_line_y) %in% class(x$theme$grid_major_line_y))) {
-      stop("grid_major_line_y should be of class ", class(x$theme$grid_major_line_y))
-    }
+    assert_class(grid_major_line_y, class(x$theme$grid_major_line_y))
     x$theme$grid_major_line_y <- grid_major_line_y
   }
 

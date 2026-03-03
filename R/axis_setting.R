@@ -1,4 +1,4 @@
-#' @title x axis settings
+#' @title X axis settings
 #' @description Define settings for an x axis.
 #' @param x an `ms_chart` object.
 #' @param orientation axis orientation, one of 'maxMin', 'minMax'.
@@ -12,18 +12,20 @@
 #' 'low', 'nextTo', 'none'.
 #' @param display should the axis be displayed (a logical of
 #' length 1).
-#' @param num_fmt number formatting. See section for more details.
+#' @param num_fmt number formatting. See the num_fmt section for more details.
 #' @param rotation rotation angle. Value should be between `-360`
 #' and `360`.
-#' @param limit_min minimum value on the axis.
-#' @param limit_max maximum value on the axis.
-#' @param position position value that cross the other axis.
-#' @param second_axis unused
+#' @param limit_min minimum value on the axis. Date objects are also accepted
+#' and will be converted automatically.
+#' @param limit_max maximum value on the axis. Date objects are also accepted
+#' and will be converted automatically.
+#' @param position the value at which this axis crosses the perpendicular axis.
+#' @param second_axis logical to be used in [ms_combochart()].
 #' @section num_fmt:
-#' All `%` need to be doubled, `0%%` mean "a number
+#' All `%` need to be doubled, `0%%` means "a number
 #' and percent symbol".
 #'
-#' From my actual knowledge, depending on some chart type
+#' To my current knowledge, depending on the chart type
 #' and options, the following values are not systematically
 #' used by office chart engine; i.e. when chart pre-compute
 #' percentages, it seems using `0%%` will have no
@@ -33,7 +35,7 @@
 #' * `0`: display the number with no decimal
 #' * `0.00`: display the number with two decimals
 #' * `0%%`: display as percentages
-#' * `0.00%%`: display as percentages with two digits
+#' * `0.00%%`: display as percentages with two decimal places
 #' * `#,##0`
 #' * `#,##0.00`
 #' * `0.00E+00`
@@ -58,6 +60,7 @@
 #' * `##0.0E+0`
 #' * `@`
 #'
+#' @return An `ms_chart` object.
 #' @export
 #' @section Illustrations:
 #'
@@ -84,7 +87,6 @@ chart_ax_x <- function( x, orientation, crosses, cross_between,
   stopifnot(inherits(x, "ms_chart"))
 
   options <- list( orientation = ifelse(missing(orientation), x$x_axis$orientation, orientation),
-                   axis_position = ifelse( second_axis, "r", "l" ),
                    crosses = ifelse(missing(crosses), x$x_axis$crosses, crosses),
                    cross_between = ifelse(missing(cross_between), x$x_axis$cross_between, cross_between),
                    major_tick_mark = ifelse(missing(major_tick_mark), x$x_axis$major_tick_mark, major_tick_mark),
@@ -117,15 +119,20 @@ chart_ax_x <- function( x, orientation, crosses, cross_between,
     options$position <- position
   }
 
+  if (second_axis) {
+    attr(x, "secondary_x") <- second_axis
+  }
+
   x$x_axis <- do.call(axis_options, options)
   x
 }
 
 
-#' @title y axis settings
+#' @title Y axis settings
 #' @description Define settings for a y axis.
 #' @inheritParams chart_ax_x
 #' @inheritSection chart_ax_x num_fmt
+#' @return An `ms_chart` object.
 #' @export
 #' @section Illustrations:
 #'
@@ -157,7 +164,6 @@ chart_ax_y <- function( x, orientation, crosses, cross_between,
   stopifnot(inherits(x, "ms_chart"))
 
   options <- list( orientation = ifelse(missing(orientation), x$y_axis$orientation, orientation),
-                   axis_position = ifelse( second_axis, "r", "l" ),
                    crosses = ifelse(missing(crosses), x$y_axis$crosses, crosses),
                    cross_between = ifelse(missing(cross_between), x$y_axis$cross_between, cross_between),
                    major_tick_mark = ifelse(missing(major_tick_mark), x$y_axis$major_tick_mark, major_tick_mark),
@@ -187,6 +193,10 @@ chart_ax_y <- function( x, orientation, crosses, cross_between,
     options$position <- x$y_axis$position
   } else if( !missing(position) ){
     options$position <- position
+  }
+
+  if (second_axis) {
+    attr(x, "secondary_y") <- second_axis
   }
 
   x$y_axis <- do.call(axis_options, options)
