@@ -79,10 +79,11 @@
 #' @seealso [chart_ax_y()], [ms_areachart()], [ms_barchart()], [ms_scatterchart()],
 #' [ms_linechart()]
 chart_ax_x <- function( x, orientation, crosses, cross_between,
-                            major_tick_mark, minor_tick_mark,
-                            tick_label_pos, display,
-                            num_fmt, rotation,
+                        major_tick_mark, minor_tick_mark,
+                        tick_label_pos, display,
+                        num_fmt, rotation,
                         limit_min, limit_max, position,
+                        major_unit, minor_unit,
                         second_axis = FALSE ){
   stopifnot(inherits(x, "ms_chart"))
 
@@ -94,7 +95,9 @@ chart_ax_x <- function( x, orientation, crosses, cross_between,
                    tick_label_pos = ifelse(missing(tick_label_pos), x$x_axis$tick_label_pos, tick_label_pos),
                    delete = ifelse(missing(display), x$x_axis$delete, !display),
                    num_fmt = ifelse(missing(num_fmt), x$x_axis$num_fmt, num_fmt),
-                   rotation = ifelse(missing(rotation), x$x_axis$rotation, rotation)
+                   rotation = ifelse(missing(rotation), x$x_axis$rotation, rotation),
+                   major_unit = if (missing(major_unit)) x$x_axis$major_unit else major_unit,
+                   minor_unit = if (missing(minor_unit)) x$x_axis$minor_unit else minor_unit
   )
 
   if( missing(limit_min) && !is.null(x$x_axis$limit_min) ){
@@ -160,6 +163,7 @@ chart_ax_y <- function( x, orientation, crosses, cross_between,
                         tick_label_pos, display,
                         num_fmt, rotation,
                         limit_min, limit_max, position,
+                        major_unit, minor_unit,
                         second_axis = FALSE ){
   stopifnot(inherits(x, "ms_chart"))
 
@@ -171,7 +175,9 @@ chart_ax_y <- function( x, orientation, crosses, cross_between,
                    tick_label_pos = ifelse(missing(tick_label_pos), x$y_axis$tick_label_pos, tick_label_pos),
                    delete = ifelse(missing(display), x$y_axis$delete, !display),
                    num_fmt = ifelse(missing(num_fmt), x$y_axis$num_fmt, num_fmt),
-                   rotation = ifelse(missing(rotation), x$y_axis$rotation, rotation)
+                   rotation = ifelse(missing(rotation), x$y_axis$rotation, rotation),
+                   major_unit = if(missing(major_unit)) x$y_axis$major_unit else major_unit,
+                   minor_unit = if(missing(minor_unit)) x$y_axis$minor_unit else minor_unit
   )
   if( missing(limit_min) && !is.null(x$y_axis$limit_min) ){
     options$limit_min <- x$y_axis$limit_min
@@ -208,7 +214,8 @@ axis_options <- function( orientation = "minMax", axis_position = "b",
                           crosses = "autoZero", cross_between = "between",
                           major_tick_mark = "cross", minor_tick_mark = "none",
                           tick_label_pos = "nextTo", delete = FALSE, num_fmt = "General",
-                          rotation = 0, limit_min = NULL, limit_max = NULL, position = NULL ){
+                          rotation = 0, major_unit = NULL, minor_unit = NULL,
+                          limit_min = NULL, limit_max = NULL, position = NULL ){
 
   if( !orientation %in% st_orientation ){
     stop("orientation should be one of ", paste0(shQuote(st_orientation), collapse = ", " ))
@@ -243,6 +250,8 @@ axis_options <- function( orientation = "minMax", axis_position = "b",
     minor_tick_mark = minor_tick_mark,
     tick_label_pos = tick_label_pos,
     rotation = rotation,
+    major_unit = major_unit,
+    minor_unit = minor_unit,
     limit_min = limit_min,
     limit_max = limit_max,
     position = position

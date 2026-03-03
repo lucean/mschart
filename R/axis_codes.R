@@ -86,6 +86,14 @@ axis_content_xml <- function(x, id, cross_id, theme, is_x = TRUE, lab = NULL, ro
     cross_at <- sprintf("<c:crossesAt val=\"%.02f\"/>", x$position)
     crosses <- ""
   }
+  major_unit <- ""
+  if (!is.null(x$major_unit)) {
+    major_unit <- sprintf("<c:majorUnit val=\"%s\"/>", x$major_unit)
+  }
+  minor_unit <- ""
+  if (!is.null(x$minor_unit)) {
+    minor_unit <- sprintf("<c:minorUnit val=\"%s\"/>", x$minor_unit)
+  }
 
   num_fmt <- ""
   if (!is.null(x$num_fmt)) {
@@ -119,7 +127,9 @@ axis_content_xml <- function(x, id, cross_id, theme, is_x = TRUE, lab = NULL, ro
     axis_ticks, num_fmt,
     sprintf("<c:crossAx val=\"%s\"/>", cross_id),
     cross_at,
-    crosses
+    crosses,
+    major_unit,
+    minor_unit
   )
   str_
 }
