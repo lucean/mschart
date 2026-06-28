@@ -4,6 +4,7 @@ Title: Chart Generation for 'Microsoft Word' and 'Microsoft PowerPoint'
     Documents
 Version: 0.4.2.010
 Authors@R: c(
+    person("lucean", , , "lucean@users.noreply.github.com"),
     person("David", "Gohel", , "david.gohel@ardata.fr", role = c("aut", "cre")),
     person("ArData", role = "cph"),
     person("YouGov", role = "fnd"),
@@ -29,9 +30,8 @@ Description: Create native charts for 'Microsoft PowerPoint' and
     package 'officer' that does not contain any feature for 'Microsoft'
     native charts production.
 License: MIT + file LICENSE
-URL: https://ardata-fr.github.io/officeverse/,
-    https://ardata-fr.github.io/mschart/
-BugReports: https://github.com/ardata-fr/mschart/issues
+URL: https://lucean.github.io/mschart/
+BugReports: https://github.com/lucean/mschart/issues
 Depends: 
     R (>= 3.5)
 Imports: 
